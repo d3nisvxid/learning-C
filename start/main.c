@@ -1,11 +1,22 @@
 #include <stdio.h>
 
 
+
 int main(){
-    printf("test");
+   printf("test\n");
+   printf("bbaaaa\n");
+   printf("negro");
+   int age = 25;
 
-    printf("bbaaaa");
+   int year = 2025;
 
-    return 0;
+   printf("tu hai anni %d\n", age); //decimal %d
+
+   printf("its year %d\n", year);
+   
+   return 0;
+
+   //this is my primo programma
+    
 }
 
