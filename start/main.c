@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-
+int sum(int a, int b){
+   return a+b;
+}
 
 int main(){
    printf("test\n");
@@ -9,6 +11,7 @@ int main(){
    int age = 25;
 
    int year = 2025;
+   printf("somma: %d", sum(32,34));
 
    printf("tu hai anni %d\n", age); //decimal %d
 
