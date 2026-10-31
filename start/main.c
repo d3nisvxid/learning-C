@@ -7,11 +7,11 @@ int sum(int a, int b){
 int main(){
    printf("test\n");
    printf("bbaaaa\n");
-   printf("negro");
+   printf("negro\n");
    int age = 25;
 
    int year = 2025;
-   printf("somma: %d", sum(32,34));
+   printf("somma: %d\n", sum(32,34));
 
    printf("tu hai anni %d\n", age); //decimal %d
 
@@ -19,7 +19,7 @@ int main(){
    
    return 0;
 
-   //this is my primo programma
+//this is my primo programma
     
 }
 
