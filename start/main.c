@@ -9,7 +9,7 @@ int main(){
    printf("bbaaaa\n");
    printf("negro\n");
    int age = 25;
-
+   int culo = 3;
    int year = 2025;
    printf("somma: %d\n", sum(32,34));
 
