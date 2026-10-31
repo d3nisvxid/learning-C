@@ -17,9 +17,8 @@ int main(){
 
    printf("its year %d\n", year);
    
-   return 0;
+   return 1;
 
 //this is my primo programma
     
 }
-
