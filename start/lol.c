@@ -3,7 +3,7 @@
 int main(void){
 
 	float test = 4.434343;
-
-	printf("%f\n", test);
+	int aaaa = 3.3;
+	printf("%f %d\n", test, aaaa);
 
 }
