@@ -4,21 +4,20 @@ int sum(int a, int b){
    return a+b;
 }
 
+int incr(int a){
+   return a+1;
+}
+
 int main(){
-   printf("test\n");
-   printf("bbaaaa\n");
-   printf("negro\n");
-   int age = 25;
-   int culo = 3;
-   int year = 2025;
-   printf("somma: %d\n", sum(32,34));
-   printf("test");
-   printf("tu hai anni %d\n", age); //decimal %d
-
-   printf("its year %d\n", year);
-   
-   return 1;
-
+   setvbuf(stdout, NULL, _IONBF, 0);
+   printf("welcome in calcolatrice\n");
+   int num1, num2;
+   printf("ins primo numero\n");
+   scanf("%d", &num1);
+   printf("inserisci secondo numero\n");
+   scanf(" %d", &num2);
+   printf("\nsum of inserted numbers: %d\n", sum(num1,num2));
+   return 0;
 //this is my primo programma
     
 }
