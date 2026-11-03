@@ -12,7 +12,7 @@ int main(){
    int culo = 3;
    int year = 2025;
    printf("somma: %d\n", sum(32,34));
-
+   printf("test");
    printf("tu hai anni %d\n", age); //decimal %d
 
    printf("its year %d\n", year);
