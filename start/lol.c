@@ -13,10 +13,28 @@ int count(int now){
 	} //IN QUESTO MODO CREI UN NUOVO STACK FRAME A OGNI CHIAMATA DI COUNT, CON I GOTO SEI SEMPRE DENTRO LO STESSO FRAME
 }
 
+
+void conta(int start, int fine){
+	if(start>fine) return;
+	printf("%d %p\n", start, &start);
+	conta(start+1, fine);
+}
+
+
+void conta_iterazione(int start, int fine){
+iterate:
+	if(start>fine) return;
+	printf("%d %p\n", start, &start);
+	start=start+1;
+	goto iterate;
+} 
+
 int main(void){
+	conta(0,9);
 
 	printf("test recursion\n");
-	count(0);
+	
+	conta_iterazione(0,9);
 
 	int i=8;
 	{
