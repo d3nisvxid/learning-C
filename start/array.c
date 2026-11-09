@@ -15,6 +15,16 @@ void incr(int *p){
 	*p = *p+1; //assegni al indirizzo di memoria p, quello che ce in indirizzo di memoria p, +1
 }
 
+void myprint(char *ptr){
+	printf("at the beginning ptr is %p\n", ptr);
+	while(*ptr!=0){
+		putchar(*ptr);
+		ptr++;
+	}
+	printf("at the end ptr is %p\n", ptr);
+}
+
+
 int main(void){
 	//int arr[] = {1,2,3};
 	//printf("il massimo valore di arr è %d\n", max(&arr));
@@ -37,7 +47,12 @@ int main(void){
 
 	printf("x after increase: %d\n",x);
 
+	int **z = &y; //puntatore a puntatore
+	printf("x is stored in %p and y is stored in %p\n",y, z);
+
+	printf("\n");
+	char mystr[] = "hello world\n"; //il nome di variabile array è gia un puntatore
+	myprint(mystr); //mia funzione che data una stringa la stampa! senza usare printf!
 	return 0;
-
-
 }
+
