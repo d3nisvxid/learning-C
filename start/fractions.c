@@ -4,6 +4,28 @@
 /*numeratore
 denominatore*/
 
+//tipo di dato aggregato
+//prima volta che non manipolo numeri
+//ma creo una struttura
+
+//internal layout
+// c  |  num | den 
+//ogni tipo verra allineato alla dimensione
+//Del tipo massimo che contiene
+//in questo caso quindi avremo 12 byte
+struct frac{
+	unsigned char color;
+	int num;
+	int den;
+};
+
+
+//getter setter normali
+void set_fraction_num(int *f, int num){
+	f[0] = num;
+
+}
+
 /*
 crea una nuova frazione setting
 numerator and denominator
@@ -24,13 +46,26 @@ void print_fraction(int *f){
 	printf("%d/%d\n", f[0], f[1]);
 }
 
+/*non farci caso è solo per provare*/
+void simplify_fraction(int *f){
+	for(int d=2; d<=f[0] && d<=f[1]; d++){
+		while(f[0] % d==0 &&
+			f[1] % d==0)
+		{
+			f[0] /= d;
+			f[1] /= d;
+		}
+	}
+}
+
 int main(void){
-	int *f1 = create_fraction(1,2);
+	printf("%d\n", (int)sizeof(struct frac));
+
+	int *f1 = create_fraction(4,20);
 	int *f2 = create_fraction(3,4);
 	print_fraction(f1);
 	print_fraction(f2);
-
-
-
+	simplify_fraction(f1);
+	print_fraction(f1);
 	return 0;
 }
