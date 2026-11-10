@@ -30,39 +30,36 @@ void set_fraction_num(int *f, int num){
 crea una nuova frazione setting
 numerator and denominator
 returning the pointer to the fraction*/
-int *create_fraction(int num, int den){
-	int *f =malloc(sizeof(int)*2);
-	//creo un pezzo di memoria di 8 byte
-	//sizeof int *2 sarebbe 8 perche sz(int)=4
-	//quindi sostanzialmente posso
-	//tenere due interi dentro sto f
+struct frac *create_fraction(int num, int den){
+	struct frac *f =malloc(sizeof(*f));
+	//creo un pezzo di memoria dei byte di frac
 	if(f==NULL) return NULL; //check memoria libera
-	f[0] = num;
-	f[1] = den;
+	f->num = num;
+	f->den = den;
 	return f;
 }
 
-void print_fraction(int *f){
-	printf("%d/%d\n", f[0], f[1]);
+void print_fraction(struct frac *f){
+	printf("%d/%d\n", f->num, f->den);
 }
 
 /*non farci caso è solo per provare*/
-void simplify_fraction(int *f){
-	for(int d=2; d<=f[0] && d<=f[1]; d++){
-		while(f[0] % d==0 &&
-			f[1] % d==0)
+void simplify_fraction(struct frac *f){
+	for(int d=2; d<=f->num && d<=f->den; d++){
+		while(f->num % d==0 &&
+			f->den % d==0)
 		{
-			f[0] /= d;
-			f[1] /= d;
+			f->num /= d;
+			f->den /= d;
 		}
 	}
 }
 
 int main(void){
-	printf("%d\n", (int)sizeof(struct frac));
+	printf("%d\n\n", (int)sizeof(struct frac));
 
-	int *f1 = create_fraction(4,20);
-	int *f2 = create_fraction(3,4);
+	struct frac *f1 = create_fraction(4,20);
+	struct frac *f2 = create_fraction(3,4);
 	print_fraction(f1);
 	print_fraction(f2);
 	simplify_fraction(f1);
